@@ -14,6 +14,6 @@ fn main() {
     fibonacci.update();
     println!("{}", fibonacci.last_value.unwrap());
 
-    println!("Took {:?}s to calculate", benchmark.get_elapsed());
+    println!("Took {:?} to calculate", benchmark.get_elapsed());
 
 }

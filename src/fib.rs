@@ -1,6 +1,7 @@
 /*
  * The reason why I decided to implement this in the form of a struct is because it would be more of a challenge.  
  * Even though there are definitely better ways to accomplish this, I figured that this would be significantly more fun.
+ * This can be modified to calculate the last digit numerous times in one program execution.
  */
 
 pub struct Fibonacci {
@@ -23,7 +24,7 @@ impl Fibonacci {
             };
         }
 
-        // now that we have verified that the length is valid, push 1 as those two are constant
+        // now that we have verified that the length is valid, push 1 as it is constant
         sequence.push(1);
 
         return Fibonacci {
@@ -33,7 +34,7 @@ impl Fibonacci {
         }
     }
 
-    // generates the fibonacci sequence up to specified length
+    // generates the fibonacci sequence up to user specified length
     pub fn update(&mut self) {
         while self.sequence.len() < self.length {
             self.sequence.push(self.calculate_next())
