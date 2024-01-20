@@ -18,7 +18,7 @@ impl Fibonacci {
         // constant sequence
         if length == 1 {
             return Fibonacci {
-                sequence,
+                sequence: vec![1],
                 length,
                 last_value: Some(0)
             };
