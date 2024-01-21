@@ -16,7 +16,7 @@ fn main() {
     
     /*
      * To update again with new values:
-     * fibonacci.update_with_length(length + 10);
+     * fibonacci.update_with_length(length + 10); -- length + 10 is just an example of a new length to test with
      * println!("{}", fibonacci.last_value.unwrap());
      */
 
