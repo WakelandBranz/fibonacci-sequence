@@ -13,7 +13,12 @@ fn main() {
     let mut fibonacci = fib::Fibonacci::new(length);
     fibonacci.update();
     println!("{}", fibonacci.last_value.unwrap());
+    
+    /*
+     * To update again with new values:
+     * fibonacci.update_with_length(length + 10);
+     * println!("{}", fibonacci.last_value.unwrap());
+     */
 
     println!("Took {:?} to calculate", benchmark.get_elapsed());
-
 }

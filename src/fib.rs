@@ -44,6 +44,34 @@ impl Fibonacci {
         self.last_value = self.sequence.last().cloned();
     }
 
+    // generate with new length
+    pub fn update_with_length(&mut self, length: usize) {
+
+        match length {
+            // invalid input
+            0 => panic!("Invalid input: Parsed length is less than 1"),
+            // constant sequence
+            1 => {
+                self.sequence = vec![1];
+                return;
+            },
+            _ => {
+                // set back up
+                self.sequence = Vec::with_capacity(length + 1);
+                self.length = length + 1;
+                self.sequence.push(0);
+                self.sequence.push(1);
+            }
+        }
+        
+        while self.sequence.len() < self.length {
+            self.sequence.push(self.calculate_next())
+        }
+
+        // update last value
+        self.last_value = self.sequence.last().cloned();
+    }
+
     // add x of n-1 and x of n-2
     fn calculate_next(&self) -> u128 {
         self.sequence[self.sequence.len() - 1] + self.sequence[self.sequence.len() - 2]
